@@ -100,7 +100,7 @@ class MetricsVisualizer:
     def delivery_vs_satisfaction(delivery_df: pd.DataFrame) -> go.Figure:
         """配送天數 vs 滿意度"""
         fig = px.scatter(delivery_df, x='delivery_days', y='customer_satisfaction',
-                         title='Delivery Days vs Satisfaction', trendline='ols',
+                         title='Delivery Days vs Satisfaction',
                          labels={'delivery_days': 'Delivery Days',
                                  'customer_satisfaction': 'Avg Satisfaction'})
         return fig

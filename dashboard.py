@@ -35,12 +35,12 @@ st.divider()
 chart_col1, chart_col2 = st.columns(2)
 
 with chart_col1:
-    st.plotly_chart(viz.revenue_trend(rev['monthly_revenue']), use_container_width=True)
-    st.plotly_chart(viz.state_revenue(calc.geo_metrics()), use_container_width=True)
+    st.plotly_chart(viz.revenue_trend(rev['monthly_revenue']), width="stretch")
+    st.plotly_chart(viz.state_revenue(calc.geo_metrics()), width="stretch")
 
 with chart_col2:
-    st.plotly_chart(viz.category_performance(calc.product_metrics()), use_container_width=True)
-    st.plotly_chart(viz.satisfaction_distribution(df_analysis), use_container_width=True)
+    st.plotly_chart(viz.category_performance(calc.product_metrics()), width="stretch")
+    st.plotly_chart(viz.satisfaction_distribution(df_analysis), width="stretch")
 
 st.divider()
 
@@ -52,7 +52,7 @@ d_col1.metric("Avg Delivery Days", f"{delivery['avg_days']:.1f}")
 d_col2.metric("Median Delivery Days", f"{delivery['median_days']:.0f}")
 d_col3.metric("Over 7 Days", f"{delivery['over_7_days_pct']:.1f}%")
 
-st.plotly_chart(viz.delivery_vs_satisfaction(delivery['by_satisfaction']), use_container_width=True)
+st.plotly_chart(viz.delivery_vs_satisfaction(delivery['by_satisfaction']), width="stretch")
 
 # --- 年度比較 ---
 st.divider()
